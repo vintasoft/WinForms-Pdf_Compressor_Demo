@@ -1,6 +1,6 @@
 # VintaSoft WinForms PDF Compressor Demo
 
-This C# project uses <a href="https://www.vintasoft.com/vsimaging-dotnet-index.html">VintaSoft Imaging .NET SDK</a> and demonstrates how to compress PDF document in WinForms:
+This C# project uses <a href="https://www.vintasoft.com/vsimaging-dotnet-index.html">VintaSoft Imaging .NET SDK</a> and demonstrates how to compress PDF document:
 * Optimize image-resources to a specified resolution.
 * Detect image color depth (black-white, grayscale, indexed).
 * Recompress image-resources using specified filters and/or compression settings.
