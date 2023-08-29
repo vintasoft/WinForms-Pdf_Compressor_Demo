@@ -21,7 +21,7 @@ This C# project uses <a href="https://www.vintasoft.com/vsimaging-dotnet-index.h
 
 
 ## Screenshot
-<img src="vintasoft-pdf-compressor-demo.png" alt="VintaSoft PDF Compressor Demo">
+<img src="vintasoft-pdf-compressor-demo.png" title="VintaSoft PDF Compressor Demo">
 
 
 ## Usage
