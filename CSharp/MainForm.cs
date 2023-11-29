@@ -124,6 +124,11 @@ namespace PdfCompressorDemo
             Jbig2AssemblyLoader.Load();
             Jpeg2000AssemblyLoader.Load();
 
+            imagesTabPage.Text = "Images";
+            resourcesTabPage.Text = "Resources";
+            cleanUpTabPage.Text = "Clean Up / Discard";
+            outputDocumentFormatTabPage.Text = "Output Document Format";
+
             for (int i = 0; i < taskGroupsTabControl.TabPages.Count; i++)
             {
                 taskGroupsCheckedListBox.Items.Add(taskGroupsTabControl.TabPages[i].Text);
