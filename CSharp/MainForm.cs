@@ -212,7 +212,7 @@ namespace PdfCompressorDemo
         #region 'File' menu
 
         /// <summary>
-        /// Handles the Click event of OpenToolStripMenuItem object.
+        /// Handles the Click event of openToolStripMenuItem object.
         /// </summary>
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -223,7 +223,7 @@ namespace PdfCompressorDemo
         }
 
         /// <summary>
-        /// Handles the Click event of SaveToToolStripMenuItem object.
+        /// Handles the Click event of saveToToolStripMenuItem object.
         /// </summary>
         private void saveToToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -263,7 +263,7 @@ namespace PdfCompressorDemo
         }
 
         /// <summary>
-        /// Handles the Click event of CloseToolStripMenuItem object.
+        /// Handles the Click event of closeToolStripMenuItem object.
         /// </summary>
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -271,7 +271,7 @@ namespace PdfCompressorDemo
         }
 
         /// <summary>
-        /// Handles the Click event of ExitToolStripMenuItem object.
+        /// Handles the Click event of exitToolStripMenuItem object.
         /// </summary>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -288,7 +288,7 @@ namespace PdfCompressorDemo
         #region 'Tools' menu
       
         /// <summary>
-        /// Handles the Click event of InspectSpaceUsageToolStripMenuItem object.
+        /// Handles the Click event of inspectSpaceUsageToolStripMenuItem object.
         /// </summary>
         private void inspectSpaceUsageToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -415,7 +415,7 @@ namespace PdfCompressorDemo
         #region 'Help' menu
 
         /// <summary>
-        /// Handles the Click event of AboutToolStripMenuItem object.
+        /// Handles the Click event of aboutToolStripMenuItem object.
         /// </summary>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -431,7 +431,7 @@ namespace PdfCompressorDemo
         #region 'Main' tab
 
         /// <summary>
-        /// Handles the ItemCheck event of TaskGroupsCheckedListBox object.
+        /// Handles the ItemCheck event of taskGroupsCheckedListBox object.
         /// </summary>
         private void taskGroupsCheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
         {
@@ -447,7 +447,7 @@ namespace PdfCompressorDemo
         }
 
         /// <summary>
-        /// Handles the SelectedIndexChanged event of TaskGroupsCheckedListBox object.
+        /// Handles the SelectedIndexChanged event of taskGroupsCheckedListBox object.
         /// </summary>
         private void taskGroupsCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -465,7 +465,7 @@ namespace PdfCompressorDemo
         }
 
         /// <summary>
-        /// Handles the Click event of ExecuteCompressionButton object.
+        /// Handles the Click event of executeCompressionButton object.
         /// </summary>
         private void executeCompressionButton_Click(object sender, EventArgs e)
         {
@@ -490,7 +490,7 @@ namespace PdfCompressorDemo
         #region 'Images' tab
 
         /// <summary>
-        /// Handles the Click event of ColorImagesCompressionSettingsButton object.
+        /// Handles the Click event of colorImagesCompressionSettingsButton object.
         /// </summary>
         private void colorImagesCompressionSettingsButton_Click(object sender, EventArgs e)
         {
@@ -498,7 +498,7 @@ namespace PdfCompressorDemo
         }
 
         /// <summary>
-        /// Handles the Click event of GrayImagesCompressionSettingsButton object.
+        /// Handles the Click event of grayImagesCompressionSettingsButton object.
         /// </summary>
         private void grayImagesCompressionSettingsButton_Click(object sender, EventArgs e)
         {
@@ -506,7 +506,7 @@ namespace PdfCompressorDemo
         }
 
         /// <summary>
-        /// Handles the Click event of BlackWhiteImagesCompressionSettingsButton object.
+        /// Handles the Click event of blackWhiteImagesCompressionSettingsButton object.
         /// </summary>
         private void blackWhiteImagesCompressionSettingsButton_Click(object sender, EventArgs e)
         {
@@ -514,7 +514,7 @@ namespace PdfCompressorDemo
         }
 
         /// <summary>
-        /// Handles the ValueChanged event of ColorImagesDownscaleNumericUpDown object.
+        /// Handles the ValueChanged event of colorImagesDownscaleNumericUpDown object.
         /// </summary>
         private void colorImagesDownscaleNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
@@ -523,7 +523,7 @@ namespace PdfCompressorDemo
         }
 
         /// <summary>
-        /// Handles the ValueChanged event of GrayImagesDownscaleNumericUpDown object.
+        /// Handles the ValueChanged event of grayImagesDownscaleNumericUpDown object.
         /// </summary>
         private void grayImagesDownscaleNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
@@ -532,7 +532,7 @@ namespace PdfCompressorDemo
         }
 
         /// <summary>
-        /// Handles the ValueChanged event of BitonalImagesDownscaleNumericUpDown object.
+        /// Handles the ValueChanged event of bitonalImagesDownscaleNumericUpDown object.
         /// </summary>
         private void bitonalImagesDownscaleNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
@@ -546,7 +546,7 @@ namespace PdfCompressorDemo
         #region 'Output Document Format' tab
 
         /// <summary>
-        /// Handles the SelectedIndexChanged event of DocumentFormatComboBox object.
+        /// Handles the SelectedIndexChanged event of documentFormatComboBox object.
         /// </summary>
         private void documentFormatComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
