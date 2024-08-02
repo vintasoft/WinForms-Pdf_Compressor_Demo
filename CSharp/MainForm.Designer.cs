@@ -38,6 +38,7 @@ namespace PdfCompressorDemo
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inspectSpaceUsageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.useMultithreadingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sourceFileSizeProgressBar = new System.Windows.Forms.ProgressBar();
@@ -95,6 +96,7 @@ namespace PdfCompressorDemo
             this.useFlateInstreadNoneCheckBox = new System.Windows.Forms.CheckBox();
             this.cleanUpTabPage = new System.Windows.Forms.TabPage();
             this.cleanUpPanel = new System.Windows.Forms.Panel();
+            this.flattenAnnotationsCheckBox = new System.Windows.Forms.CheckBox();
             this.optimizeFontSubsetsCheckBox = new System.Windows.Forms.CheckBox();
             this.removeStuctureTreeCheckBox = new System.Windows.Forms.CheckBox();
             this.removeInteractiveFormCheckBox = new System.Windows.Forms.CheckBox();
@@ -122,7 +124,6 @@ namespace PdfCompressorDemo
             this.taskGroupsCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.executeCompressionButton = new System.Windows.Forms.Button();
             this.pdfDocumentCompressionBackgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.useMultithreadingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.taskGroupsTabControl.SuspendLayout();
             this.imagesTabPage.SuspendLayout();
@@ -219,9 +220,18 @@ namespace PdfCompressorDemo
             // inspectSpaceUsageToolStripMenuItem
             // 
             this.inspectSpaceUsageToolStripMenuItem.Name = "inspectSpaceUsageToolStripMenuItem";
-            this.inspectSpaceUsageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inspectSpaceUsageToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.inspectSpaceUsageToolStripMenuItem.Text = "Inspect space usage";
             this.inspectSpaceUsageToolStripMenuItem.Click += new System.EventHandler(this.inspectSpaceUsageToolStripMenuItem_Click);
+            // 
+            // useMultithreadingToolStripMenuItem
+            // 
+            this.useMultithreadingToolStripMenuItem.Checked = true;
+            this.useMultithreadingToolStripMenuItem.CheckOnClick = true;
+            this.useMultithreadingToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.useMultithreadingToolStripMenuItem.Name = "useMultithreadingToolStripMenuItem";
+            this.useMultithreadingToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.useMultithreadingToolStripMenuItem.Text = "Use Multithreading";
             // 
             // helpToolStripMenuItem
             // 
@@ -946,6 +956,7 @@ namespace PdfCompressorDemo
             // 
             // cleanUpPanel
             // 
+            this.cleanUpPanel.Controls.Add(this.flattenAnnotationsCheckBox);
             this.cleanUpPanel.Controls.Add(this.optimizeFontSubsetsCheckBox);
             this.cleanUpPanel.Controls.Add(this.removeStuctureTreeCheckBox);
             this.cleanUpPanel.Controls.Add(this.removeInteractiveFormCheckBox);
@@ -969,6 +980,16 @@ namespace PdfCompressorDemo
             this.cleanUpPanel.Size = new System.Drawing.Size(659, 294);
             this.cleanUpPanel.TabIndex = 15;
             // 
+            // flattenAnnotationsCheckBox
+            // 
+            this.flattenAnnotationsCheckBox.AutoSize = true;
+            this.flattenAnnotationsCheckBox.Location = new System.Drawing.Point(204, 10);
+            this.flattenAnnotationsCheckBox.Name = "flattenAnnotationsCheckBox";
+            this.flattenAnnotationsCheckBox.Size = new System.Drawing.Size(116, 17);
+            this.flattenAnnotationsCheckBox.TabIndex = 27;
+            this.flattenAnnotationsCheckBox.Text = "Flatten annotations";
+            this.flattenAnnotationsCheckBox.UseVisualStyleBackColor = true;
+            // 
             // optimizeFontSubsetsCheckBox
             // 
             this.optimizeFontSubsetsCheckBox.AutoSize = true;
@@ -982,7 +1003,7 @@ namespace PdfCompressorDemo
             // removeStuctureTreeCheckBox
             // 
             this.removeStuctureTreeCheckBox.AutoSize = true;
-            this.removeStuctureTreeCheckBox.Location = new System.Drawing.Point(204, 171);
+            this.removeStuctureTreeCheckBox.Location = new System.Drawing.Point(204, 194);
             this.removeStuctureTreeCheckBox.Name = "removeStuctureTreeCheckBox";
             this.removeStuctureTreeCheckBox.Size = new System.Drawing.Size(131, 17);
             this.removeStuctureTreeCheckBox.TabIndex = 25;
@@ -992,7 +1013,7 @@ namespace PdfCompressorDemo
             // removeInteractiveFormCheckBox
             // 
             this.removeInteractiveFormCheckBox.AutoSize = true;
-            this.removeInteractiveFormCheckBox.Location = new System.Drawing.Point(204, 148);
+            this.removeInteractiveFormCheckBox.Location = new System.Drawing.Point(204, 171);
             this.removeInteractiveFormCheckBox.Name = "removeInteractiveFormCheckBox";
             this.removeInteractiveFormCheckBox.Size = new System.Drawing.Size(141, 17);
             this.removeInteractiveFormCheckBox.TabIndex = 24;
@@ -1074,7 +1095,7 @@ namespace PdfCompressorDemo
             // removeMetadataCheckBox
             // 
             this.removeMetadataCheckBox.AutoSize = true;
-            this.removeMetadataCheckBox.Location = new System.Drawing.Point(204, 125);
+            this.removeMetadataCheckBox.Location = new System.Drawing.Point(204, 148);
             this.removeMetadataCheckBox.Name = "removeMetadataCheckBox";
             this.removeMetadataCheckBox.Size = new System.Drawing.Size(113, 17);
             this.removeMetadataCheckBox.TabIndex = 17;
@@ -1096,7 +1117,7 @@ namespace PdfCompressorDemo
             // removeAnnotationsCheckBox
             // 
             this.removeAnnotationsCheckBox.AutoSize = true;
-            this.removeAnnotationsCheckBox.Location = new System.Drawing.Point(204, 10);
+            this.removeAnnotationsCheckBox.Location = new System.Drawing.Point(204, 33);
             this.removeAnnotationsCheckBox.Name = "removeAnnotationsCheckBox";
             this.removeAnnotationsCheckBox.Size = new System.Drawing.Size(124, 17);
             this.removeAnnotationsCheckBox.TabIndex = 15;
@@ -1106,7 +1127,7 @@ namespace PdfCompressorDemo
             // removeBookmarksCheckBox
             // 
             this.removeBookmarksCheckBox.AutoSize = true;
-            this.removeBookmarksCheckBox.Location = new System.Drawing.Point(204, 33);
+            this.removeBookmarksCheckBox.Location = new System.Drawing.Point(204, 56);
             this.removeBookmarksCheckBox.Name = "removeBookmarksCheckBox";
             this.removeBookmarksCheckBox.Size = new System.Drawing.Size(121, 17);
             this.removeBookmarksCheckBox.TabIndex = 14;
@@ -1128,7 +1149,7 @@ namespace PdfCompressorDemo
             // removeEmbeddedThumbnailsCheckBox
             // 
             this.removeEmbeddedThumbnailsCheckBox.AutoSize = true;
-            this.removeEmbeddedThumbnailsCheckBox.Location = new System.Drawing.Point(204, 56);
+            this.removeEmbeddedThumbnailsCheckBox.Location = new System.Drawing.Point(204, 79);
             this.removeEmbeddedThumbnailsCheckBox.Name = "removeEmbeddedThumbnailsCheckBox";
             this.removeEmbeddedThumbnailsCheckBox.Size = new System.Drawing.Size(199, 17);
             this.removeEmbeddedThumbnailsCheckBox.TabIndex = 9;
@@ -1138,7 +1159,7 @@ namespace PdfCompressorDemo
             // removeFileAttachementsCheckBox
             // 
             this.removeFileAttachementsCheckBox.AutoSize = true;
-            this.removeFileAttachementsCheckBox.Location = new System.Drawing.Point(204, 102);
+            this.removeFileAttachementsCheckBox.Location = new System.Drawing.Point(204, 125);
             this.removeFileAttachementsCheckBox.Name = "removeFileAttachementsCheckBox";
             this.removeFileAttachementsCheckBox.Size = new System.Drawing.Size(143, 17);
             this.removeFileAttachementsCheckBox.TabIndex = 10;
@@ -1148,7 +1169,7 @@ namespace PdfCompressorDemo
             // removeDocumentInformationCheckBox
             // 
             this.removeDocumentInformationCheckBox.AutoSize = true;
-            this.removeDocumentInformationCheckBox.Location = new System.Drawing.Point(204, 79);
+            this.removeDocumentInformationCheckBox.Location = new System.Drawing.Point(204, 102);
             this.removeDocumentInformationCheckBox.Name = "removeDocumentInformationCheckBox";
             this.removeDocumentInformationCheckBox.Size = new System.Drawing.Size(170, 17);
             this.removeDocumentInformationCheckBox.TabIndex = 12;
@@ -1255,15 +1276,6 @@ namespace PdfCompressorDemo
             this.pdfDocumentCompressionBackgroundWorker.WorkerSupportsCancellation = true;
             this.pdfDocumentCompressionBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.pdfDocumentCompressionBackgroundWorker_DoWork);
             this.pdfDocumentCompressionBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.pdfDocumentCompressionBackgroundWorker_RunWorkerCompleted);
-            // 
-            // useMultithreadingToolStripMenuItem
-            // 
-            this.useMultithreadingToolStripMenuItem.Checked = true;
-            this.useMultithreadingToolStripMenuItem.CheckOnClick = true;
-            this.useMultithreadingToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.useMultithreadingToolStripMenuItem.Name = "useMultithreadingToolStripMenuItem";
-            this.useMultithreadingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.useMultithreadingToolStripMenuItem.Text = "Use Multithreading";
             // 
             // MainForm
             // 
@@ -1419,5 +1431,6 @@ namespace PdfCompressorDemo
         private System.Windows.Forms.CheckBox removeStuctureTreeCheckBox;
         private System.Windows.Forms.CheckBox optimizeFontSubsetsCheckBox;
         private System.Windows.Forms.ToolStripMenuItem useMultithreadingToolStripMenuItem;
+        private System.Windows.Forms.CheckBox flattenAnnotationsCheckBox;
     }
 }

@@ -938,6 +938,7 @@ namespace PdfCompressorDemo
             command.RemoveBookmarks = GetCheckState(cleanUpPanel, removeBookmarksCheckBox);
             command.RemoveInvalidBookmarks = GetCheckState(cleanUpPanel, removeInvalidBookmarksCheckBox);
             command.RemoveAnnotations = GetCheckState(cleanUpPanel, removeAnnotationsCheckBox);
+            command.FlattenAnnotations = GetCheckState(cleanUpPanel, flattenAnnotationsCheckBox);
             command.RemoveInvalidLinks = GetCheckState(cleanUpPanel, removeInvalidLinksCheckBox);
             command.RemoveUnusedPages = GetCheckState(cleanUpPanel, removeUnusedPagesCheckBox);
             command.RemoveUnusedNames = GetCheckState(cleanUpPanel, cleanupNameDictionaryCheckBox);
@@ -1139,10 +1140,10 @@ namespace PdfCompressorDemo
             logTextBox.AppendText(text);
         }
 
-        #endregion
 
         #endregion
 
-      
+        #endregion
+
     }
 }
