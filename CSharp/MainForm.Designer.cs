@@ -116,6 +116,8 @@ namespace PdfCompressorDemo
             this.removeDocumentInformationCheckBox = new System.Windows.Forms.CheckBox();
             this.outputDocumentFormatTabPage = new System.Windows.Forms.TabPage();
             this.documentOutputFormatPanel = new System.Windows.Forms.Panel();
+            this.useLinarizationCheckBox = new System.Windows.Forms.CheckBox();
+            this.useCompressedObjectStreamsCheckBox = new System.Windows.Forms.CheckBox();
             this.sourceFormatLabel = new System.Windows.Forms.Label();
             this.useCompressedXrefCheckBox = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -567,7 +569,7 @@ namespace PdfCompressorDemo
             // 
             // colorImagesCompressionSettingsButton
             // 
-            this.colorImagesCompressionSettingsButton.Location = new System.Drawing.Point(296, 11);
+            this.colorImagesCompressionSettingsButton.Location = new System.Drawing.Point(306, 12);
             this.colorImagesCompressionSettingsButton.Name = "colorImagesCompressionSettingsButton";
             this.colorImagesCompressionSettingsButton.Size = new System.Drawing.Size(77, 23);
             this.colorImagesCompressionSettingsButton.TabIndex = 5;
@@ -594,7 +596,7 @@ namespace PdfCompressorDemo
             this.colorCompressionComboBox.FormattingEnabled = true;
             this.colorCompressionComboBox.Location = new System.Drawing.Point(106, 13);
             this.colorCompressionComboBox.Name = "colorCompressionComboBox";
-            this.colorCompressionComboBox.Size = new System.Drawing.Size(184, 21);
+            this.colorCompressionComboBox.Size = new System.Drawing.Size(194, 21);
             this.colorCompressionComboBox.TabIndex = 2;
             this.colorCompressionComboBox.SelectedIndexChanged += new System.EventHandler(this.UpdateUI_Handler);
             // 
@@ -705,7 +707,7 @@ namespace PdfCompressorDemo
             // 
             // blackWhiteImagesCompressionSettingsButton
             // 
-            this.blackWhiteImagesCompressionSettingsButton.Location = new System.Drawing.Point(296, 12);
+            this.blackWhiteImagesCompressionSettingsButton.Location = new System.Drawing.Point(307, 13);
             this.blackWhiteImagesCompressionSettingsButton.Name = "blackWhiteImagesCompressionSettingsButton";
             this.blackWhiteImagesCompressionSettingsButton.Size = new System.Drawing.Size(77, 23);
             this.blackWhiteImagesCompressionSettingsButton.TabIndex = 5;
@@ -732,7 +734,7 @@ namespace PdfCompressorDemo
             this.blackWhiteCompressionComboBox.FormattingEnabled = true;
             this.blackWhiteCompressionComboBox.Location = new System.Drawing.Point(106, 14);
             this.blackWhiteCompressionComboBox.Name = "blackWhiteCompressionComboBox";
-            this.blackWhiteCompressionComboBox.Size = new System.Drawing.Size(184, 21);
+            this.blackWhiteCompressionComboBox.Size = new System.Drawing.Size(195, 21);
             this.blackWhiteCompressionComboBox.TabIndex = 3;
             this.blackWhiteCompressionComboBox.SelectedIndexChanged += new System.EventHandler(this.UpdateUI_Handler);
             // 
@@ -843,7 +845,7 @@ namespace PdfCompressorDemo
             // 
             // grayImagesCompressionSettingsButton
             // 
-            this.grayImagesCompressionSettingsButton.Location = new System.Drawing.Point(296, 12);
+            this.grayImagesCompressionSettingsButton.Location = new System.Drawing.Point(306, 13);
             this.grayImagesCompressionSettingsButton.Name = "grayImagesCompressionSettingsButton";
             this.grayImagesCompressionSettingsButton.Size = new System.Drawing.Size(77, 23);
             this.grayImagesCompressionSettingsButton.TabIndex = 5;
@@ -870,7 +872,7 @@ namespace PdfCompressorDemo
             this.grayCompressionComboBox.FormattingEnabled = true;
             this.grayCompressionComboBox.Location = new System.Drawing.Point(106, 14);
             this.grayCompressionComboBox.Name = "grayCompressionComboBox";
-            this.grayCompressionComboBox.Size = new System.Drawing.Size(184, 21);
+            this.grayCompressionComboBox.Size = new System.Drawing.Size(194, 21);
             this.grayCompressionComboBox.TabIndex = 2;
             this.grayCompressionComboBox.SelectedIndexChanged += new System.EventHandler(this.UpdateUI_Handler);
             // 
@@ -1188,6 +1190,8 @@ namespace PdfCompressorDemo
             // 
             // documentOutputFormatPanel
             // 
+            this.documentOutputFormatPanel.Controls.Add(this.useLinarizationCheckBox);
+            this.documentOutputFormatPanel.Controls.Add(this.useCompressedObjectStreamsCheckBox);
             this.documentOutputFormatPanel.Controls.Add(this.sourceFormatLabel);
             this.documentOutputFormatPanel.Controls.Add(this.useCompressedXrefCheckBox);
             this.documentOutputFormatPanel.Controls.Add(this.label9);
@@ -1198,6 +1202,28 @@ namespace PdfCompressorDemo
             this.documentOutputFormatPanel.Name = "documentOutputFormatPanel";
             this.documentOutputFormatPanel.Size = new System.Drawing.Size(659, 294);
             this.documentOutputFormatPanel.TabIndex = 8;
+            // 
+            // useLinarizationCheckBox
+            // 
+            this.useLinarizationCheckBox.AutoSize = true;
+            this.useLinarizationCheckBox.Location = new System.Drawing.Point(14, 82);
+            this.useLinarizationCheckBox.Name = "useLinarizationCheckBox";
+            this.useLinarizationCheckBox.Size = new System.Drawing.Size(187, 17);
+            this.useLinarizationCheckBox.TabIndex = 17;
+            this.useLinarizationCheckBox.Text = "Linearized format (Fast Web View)";
+            this.useLinarizationCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // useCompressedObjectStreamsCheckBox
+            // 
+            this.useCompressedObjectStreamsCheckBox.AutoSize = true;
+            this.useCompressedObjectStreamsCheckBox.Checked = true;
+            this.useCompressedObjectStreamsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.useCompressedObjectStreamsCheckBox.Location = new System.Drawing.Point(14, 60);
+            this.useCompressedObjectStreamsCheckBox.Name = "useCompressedObjectStreamsCheckBox";
+            this.useCompressedObjectStreamsCheckBox.Size = new System.Drawing.Size(176, 17);
+            this.useCompressedObjectStreamsCheckBox.TabIndex = 16;
+            this.useCompressedObjectStreamsCheckBox.Text = "Use compressed object streams";
+            this.useCompressedObjectStreamsCheckBox.UseVisualStyleBackColor = true;
             // 
             // sourceFormatLabel
             // 
@@ -1232,7 +1258,7 @@ namespace PdfCompressorDemo
             // useTextDocumentFormatCheckBox
             // 
             this.useTextDocumentFormatCheckBox.AutoSize = true;
-            this.useTextDocumentFormatCheckBox.Location = new System.Drawing.Point(14, 60);
+            this.useTextDocumentFormatCheckBox.Location = new System.Drawing.Point(14, 104);
             this.useTextDocumentFormatCheckBox.Name = "useTextDocumentFormatCheckBox";
             this.useTextDocumentFormatCheckBox.Size = new System.Drawing.Size(305, 17);
             this.useTextDocumentFormatCheckBox.TabIndex = 7;
@@ -1432,5 +1458,7 @@ namespace PdfCompressorDemo
         private System.Windows.Forms.CheckBox optimizeFontSubsetsCheckBox;
         private System.Windows.Forms.ToolStripMenuItem useMultithreadingToolStripMenuItem;
         private System.Windows.Forms.CheckBox flattenAnnotationsCheckBox;
+        private System.Windows.Forms.CheckBox useCompressedObjectStreamsCheckBox;
+        private System.Windows.Forms.CheckBox useLinarizationCheckBox;
     }
 }

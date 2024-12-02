@@ -606,6 +606,7 @@ namespace PdfCompressorDemo
                 availableGrayCompressions.Add(PdfCompression.Jpeg2000);
             }
             useCompressedXrefCheckBox.Enabled = version >= 15;
+            useCompressedObjectStreamsCheckBox.Enabled = version >= 15;
 
             // init image compression settings
 
@@ -874,7 +875,10 @@ namespace PdfCompressorDemo
                     return;
                 }
 
-                compressedDocumentFormatComboBox.SelectedIndex = 6;
+                if (_currentDocument.Format.VersionNumber < 20)
+                    compressedDocumentFormatComboBox.SelectedIndex = 7;
+                else
+                    compressedDocumentFormatComboBox.SelectedIndex = 8;
                 sourceFormatLabel.Text = string.Format("(source format {0})", _currentDocument.Format.Version);
             }
             catch (Exception ex)
@@ -1087,7 +1091,7 @@ namespace PdfCompressorDemo
             {
                 bool binaryFormat = _currentDocument.Format.BinaryFormat;
                 bool compressedXref = _currentDocument.Format.CompressedCrossReferenceTable;
-
+                
                 string version = (string)compressedDocumentFormatComboBox.SelectedItem;
                 if (useCompressedXrefCheckBox.Enabled)
                     compressedXref = useCompressedXrefCheckBox.Checked;
@@ -1096,7 +1100,9 @@ namespace PdfCompressorDemo
                 if (useTextDocumentFormatCheckBox.Enabled)
                     binaryFormat = !useTextDocumentFormatCheckBox.Checked;
 
-                format = new PdfFormat(version, compressedXref, binaryFormat);
+                bool compressedObjectStreams = useCompressedObjectStreamsCheckBox.Checked;
+
+                format = new PdfFormat(version, compressedXref, compressedObjectStreams, binaryFormat, format.LinearizedFormat);
             }
 
             return format;
