@@ -12,7 +12,7 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>    
     <EnableDefaultItems>false</EnableDefaultItems>
-    <Version>14.1.12.1</Version>
+    <Version>14.1.14.1</Version>
     <AssemblyName>PdfCompressorDemo</AssemblyName>
     <RootNamespace>PdfCompressorDemo</RootNamespace>
     <StartupObject>PdfCompressorDemo.Program</StartupObject>
@@ -34,12 +34,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Vintasoft.Imaging" Version="14.1.12.1" />
-    <PackageReference Include="Vintasoft.Imaging.Gdi" Version="14.1.12.1" />
-    <PackageReference Include="Vintasoft.Imaging.Jbig2Codec" Version="11.1.12.1" />
-    <PackageReference Include="Vintasoft.Imaging.Jpeg2000Codec" Version="10.1.12.1" />
-    <PackageReference Include="Vintasoft.Imaging.Pdf" Version="11.1.12.1" />
-    <PackageReference Include="Vintasoft.Imaging.UI" Version="14.1.12.1" />
+    <PackageReference Include="Vintasoft.Imaging" Version="14.1.14.1" />
+    <PackageReference Include="Vintasoft.Imaging.Gdi" Version="14.1.14.1" />
+    <PackageReference Include="Vintasoft.Imaging.Jbig2Codec" Version="11.1.14.1" />
+    <PackageReference Include="Vintasoft.Imaging.Jpeg2000Codec" Version="10.1.14.1" />
+    <PackageReference Include="Vintasoft.Imaging.Pdf" Version="11.1.14.1" />
+    <PackageReference Include="Vintasoft.Imaging.UI" Version="14.1.14.1" />
     <PackageReference Include="Vintasoft.Shared" Version="4.5.0.1" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +64,8 @@
     </Compile>
     <Compile Include="DemosCommonCode.Imaging\Codecs\PluginsEncoderFactory\Dialogs\Jpeg2000EncoderSettingsForm.designer.cs">
       <DependentUpon>Jpeg2000EncoderSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DemosCommonCode.Imaging\ColorManagementHelper.cs">
     </Compile>
     <Compile Include="DemosCommonCode\AboutBoxBaseForm.cs">
       <SubType>Form</SubType>
@@ -120,5 +122,11 @@
     </EmbeddedResource>
     <Content Include="App.ico" />
     <Content Include="directives.txt" />
+    <None Include="DefaultCMYK.icc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DefaultRGB.icc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

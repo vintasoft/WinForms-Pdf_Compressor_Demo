@@ -17,6 +17,7 @@ using DemosCommonCode;
 using DemosCommonCode.Imaging.Codecs.Dialogs;
 using DemosCommonCode.Pdf.Security;
 using System.Diagnostics;
+using DemosCommonCode.Imaging;
 
 namespace PdfCompressorDemo
 {
@@ -862,6 +863,12 @@ namespace PdfCompressorDemo
 
                 // open PDF document
                 _currentDocument = new PdfDocument(filename, true);
+
+                // initialize color management 
+                _currentDocument.DecodingSettings = new Vintasoft.Imaging.Codecs.Decoders.DecodingSettings();
+                _currentDocument.DecodingSettings.ColorManagement = new Vintasoft.Imaging.ColorManagement.ColorManagementDecodeSettings();
+                ColorManagementHelper.InitColorManagement(_currentDocument.DecodingSettings.ColorManagement);
+
                 _sourceFilename = filename;
                 _sourceStreamLength = _currentDocument.StreamLength;
 
