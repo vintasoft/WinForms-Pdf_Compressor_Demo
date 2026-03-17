@@ -13,11 +13,11 @@ using Vintasoft.Imaging.Pdf.Tree;
 using Vintasoft.Imaging.Processing;
 using Vintasoft.Imaging.Utils;
 
-using DemosCommonCode;
-using DemosCommonCode.Imaging.Codecs.Dialogs;
-using DemosCommonCode.Pdf.Security;
+using CommonCode;
+using CommonCode.Imaging.Codecs.Dialogs;
+using CommonCode.Pdf.Security;
 using System.Diagnostics;
-using DemosCommonCode.Imaging;
+using CommonCode.Imaging;
 
 namespace PdfCompressorDemo
 {
